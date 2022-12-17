@@ -1,0 +1,9 @@
+- [x] HTML
+- [x] CSS
+- [x] JavaScript
+- [x] React
+- [ ] Redux
+- [ ] Jest, Enzyme, and Selenium
+- [x] Git and GitHub
+- [x] Command line and file navigation
+- [ ] Wireframing
