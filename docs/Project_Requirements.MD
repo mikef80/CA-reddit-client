@@ -9,6 +9,7 @@
     - Features
     - Future work
 - Write unit tests for your components using Jest and Enzyme
+    - This will be Jest and RTL due to the deprecation of Enzyme.
 - Write end-to-end tests for your application
 - Users can use the application on any device (desktop to mobile)
 - Users can use the application on any modern browser
