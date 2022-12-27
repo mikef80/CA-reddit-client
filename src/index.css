@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Rocko";
+    src: url('./fonts/RockoFLFRegular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RockoBold";
+    src: url('./fonts/RockoFLFBold.ttf');
+    font-weight: bold;
+}
+

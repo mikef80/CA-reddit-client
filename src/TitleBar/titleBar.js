@@ -1,9 +1,17 @@
 import React from "react";
+import mainLogo from "../images/mainLogo.png";
 
 export const TitleBar = () => {
   return (
-    <div>
-      <h1>TitleBar</h1>
+    <div
+      className='text-md w-full justify-center flex rocko'
+      role='heading'
+      aria-level='1'>
+      <div>Reddit</div>
+      <div>
+        <img src={mainLogo} alt='logo' className='max-w-[25px]' />
+      </div>
+      <div>Clone</div>
     </div>
   );
 };
