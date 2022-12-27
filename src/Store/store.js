@@ -1,5 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({
-    
-})
+import searchBarReducer from "../SearchBar/searchBarSlice";
+
+export default configureStore({
+  reducer: {
+    searchBar: searchBarReducer,
+  },
+});
