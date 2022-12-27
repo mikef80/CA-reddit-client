@@ -4,7 +4,7 @@ import mainLogo from "../images/mainLogo.png";
 export const TitleBar = () => {
   return (
     <div
-      className='text-md w-full justify-center flex rocko'
+      className='text-md w-full justify-center flex rocko pb-4'
       role='heading'
       aria-level='1'>
       <div>Reddit</div>
