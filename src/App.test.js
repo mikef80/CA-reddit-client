@@ -10,6 +10,6 @@ import App from './App';
 
 test('should render menu/title bar', () => {
   render(<App />);
-  const titleBar = screen.getByRole('titleBar');
-  expect(titleBar).toBeInTheDocument();
+  const heading = screen.getByRole('heading');
+  expect(heading).toBeInTheDocument();
 })
