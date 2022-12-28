@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 export const searchBarSlice = createSlice({
     name: 'search',
     initialState: {
-        value: '',
+        term: '',
         returnedJSON: {}
     },
     reducers: {
         updateTerm: (state, action) => {
-            state.value = action.payload;
+            state.term = action.payload;
             console.log('something');
         }
     }

@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateTerm } from './searchBarSlice';
 
 export const SearchBar = () => {
-    const term = useSelector(state => state.searchBar.value);
-
+    const term = useSelector(state => state.searchBar.term);
 
     const dispatch = useDispatch();
 
@@ -16,8 +15,8 @@ export const SearchBar = () => {
 
     return (
         <div>
-            <input type="search" name="search" id="search" className='border-slate-900 border' role="search" onChange={ updateInput } value={term} />
-            {/* <h1>{ term }</h1> */}
+            <input type="search" name="search" id="search" className='border-slate-900 border' role="search" onChange={ updateInput } term={ term } />
+            <p>{ term }</p>
         </div>
     );
 };
