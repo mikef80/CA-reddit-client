@@ -42,9 +42,9 @@ const Posts = () => {
                 posts.posts.map(post => {
                     return post.map(item => {
                         console.log(item);
-                        const { title, selftext } = item.data;
+                        const { id, title, selftext } = item.data;
                         console.log(`${title}: ${selftext}`);
-                        // return <p role="generic" key={ post.data.id }>{ post.data.title }</p>;
+                        return <p role="generic" key={ id }>{ title }</p>;
                     })
                 })
                     :
