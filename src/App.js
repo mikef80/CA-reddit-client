@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { TitleBar } from "./TitleBar/titleBar";
+import { TitleBar } from "./TitleBar/TitleBar";
 import { Main } from "./Main/Main";
 import { Provider } from "react-redux";
 import store from "./Store/store";

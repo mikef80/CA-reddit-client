@@ -25,3 +25,9 @@ test("should render search bar", () => {
   const search = screen.getByRole("search");
   expect(search).toBeInTheDocument();
 });
+
+test("should render posts", () => {
+  render(<App />);
+  const posts = screen.getByRole("generic");
+  expect(posts).toBeInTheDocument();
+});
