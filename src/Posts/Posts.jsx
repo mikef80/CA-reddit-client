@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { updatePosts, fetchPosts } from './postsSlice';
 
+import Post from '../Post/Post';
+
 const Posts = () => {
     const posts = useSelector(state => state.posts);
     let returnedPosts;
@@ -27,26 +29,18 @@ const Posts = () => {
 
     return (
         <div>
-            {/* { posts.isLoading ?
-
-                <p>Loading...</p>
-                :
-                posts.posts.map(post => {
-                    console.log(post);
-                    return <p role="generic" key={ post.data.id }>{ post.data.title }</p>;
-                }) } */}
             { posts.isLoading ?
                 <p>Loading...</p>
                 :
-                posts.posts.length > 0 ? 
-                posts.posts.map(post => {
-                    return post.map(item => {
-                        console.log(item);
-                        const { id, title, selftext } = item.data;
-                        console.log(`${title}: ${selftext}`);
-                        return <p role="generic" key={ id }>{ title }</p>;
+                posts.posts.length > 0 ?
+                    posts.posts.map(post => {
+                        return post.map(item => {
+                            const { id, title, selftext, url, thumbnail } = item.data;
+                            console.log(item.data);
+                            // return <p role="generic" key={ id }>{ title }</p>;
+                            return <Post />;
+                        });
                     })
-                })
                     :
                     <p>No posts returned.</p>
             }
