@@ -1,15 +1,15 @@
 .rocko {
-    font-family: 'Rocko', sans-serif;
+    font-family: 'Rocko', Arial,  sans-serif;
 }
 
 .rockoBold {
-    font-family: 'RockoBold', sans-serif;
+    font-family: 'RockoBold', Arial, sans-serif;
 }
 
 .ibmPlexSans {
-    font-family: 'IBM Plex Sans',sans-serif;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
 }
 
 .notoSans {
-    font-family: 'Noto Sans',sans-serif;
+    font-family: 'Noto Sans', Arial, sans-serif;
 }

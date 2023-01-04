@@ -35,10 +35,10 @@ const Posts = () => {
                 posts.posts.length > 0 ?
                     posts.posts.map(post => {
                         return post.map(item => {
-                            const { id, title, selftext, url, thumbnail } = item.data;
-                            console.log(item.data);
-                            // return <p role="generic" key={ id }>{ title }</p>;
-                            return <Post />;
+                            const { id } = item.data;
+                            // console.log(item.data);
+                            
+                            return <Post key={id} data={item.data} />;
                         });
                     })
                     :
