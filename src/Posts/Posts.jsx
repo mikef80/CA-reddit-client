@@ -1,51 +1,41 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { updatePosts, fetchPosts } from './postsSlice';
+import { fetchPosts } from "./postsSlice";
 
-import Post from '../Post/Post';
+import Post from "../Post/Post";
 
 const Posts = () => {
-    const posts = useSelector(state => state.posts);
-    let returnedPosts;
+  const posts = useSelector((state) => state.posts);
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const getPosts = async () => {
-        // THINK I NEED A THUNK IN HERE OR POSTSSLICE TO UPDATE STATE ASYNC
-        /* const response = await fetch('https://www.reddit.com/search.json?q=surfing');
-        const raw = await response.json();
-        console.log(raw.data.children[0].data.title);
-        const posts = raw.data.children;
-        console.log(posts); */
+  const getPosts = useCallback(async () => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
-        dispatch(fetchPosts());
-        // dispatch(updatePosts(posts));
-    };
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
 
-    useEffect(() => {
-        getPosts();
-    }, []);
+  return (
+    <div>
+      {posts.isLoading ? (
+        <p>Loading...</p>
+      ) : posts.posts.length > 0 ? (
+        posts.posts.map((post) => {
+          return post.map((item) => {
+            const { id } = item.data;
+            // console.log(item.data);
 
-    return (
-        <div>
-            { posts.isLoading ?
-                <p>Loading...</p>
-                :
-                posts.posts.length > 0 ?
-                    posts.posts.map(post => {
-                        return post.map(item => {
-                            const { id } = item.data;
-                            // console.log(item.data);
-                            
-                            return <Post key={id} data={item.data} />;
-                        });
-                    })
-                    :
-                    <p>No posts returned.</p>
-            }
-        </div>
-    );
+            return <Post key={id} data={item.data} />;
+          });
+        })
+      ) : (
+        <p>No posts returned.</p>
+      )}
+    </div>
+  );
 };
 
 export default Posts;
