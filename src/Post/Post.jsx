@@ -18,7 +18,7 @@ const Post = (props) => {
     >
       <h3 className="ibmPlexSans font-medium pb-4">{title ? title : ""}</h3>
       {!media && thumbnail ? <img src={thumbnail} alt={title} className='rounded-md' /> : ""}
-      {media && <video src={video_url} controls />}
+      {media && <video src={video_url} controls className="rounded-md" />}
       <p className="notoSans font-normal text-sm">{selftext ? selftext : ""}</p>
     </div>
   );

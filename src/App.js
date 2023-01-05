@@ -8,7 +8,7 @@ import store from "./Store/store";
 function App() {
   return (
     <Provider store={store}>
-      <div className='App flex flex-col p-3 h-full grow'>
+      <div className='App flex flex-col p-3 h-full md:w-1/2 grow m-auto'>
         <TitleBar />
         <Main />
       </div>
