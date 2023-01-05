@@ -9,7 +9,6 @@ export const searchBarSlice = createSlice({
     reducers: {
         updateTerm: (state, action) => {
             state.term = action.payload;
-            console.log('something');
         }
     }
 });
