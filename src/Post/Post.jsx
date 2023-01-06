@@ -15,10 +15,10 @@ const Post = (props) => {
   }
 
   return (
-    <div className="border border-slate-400 rounded flex flex-col p-4 my-2 font">
+    <div className="border-[1px] border-black flex flex-col p-4 my-2 font">
       <h3 className="ibmPlexSans font-medium pb-4">{title ? title : ""}</h3>
       {!media && thumbnail ? (
-        <img src={thumbnail} alt={title} className="rounded-md" />
+        <img src={thumbnail} alt={title} className="rounded-md border-black border" />
       ) : (
         ""
       )}

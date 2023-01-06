@@ -8,8 +8,8 @@ import store from "./Store/store";
 function App() {
   return (
     <Provider store={store}>
-      <div className='App flex flex-col p-3 h-full md:w-1/2 grow m-auto'>
-        <TitleBar />
+      <TitleBar />
+      <div className="App flex flex-col  h-full md:w-1/2 grow m-auto ">
         <Main />
       </div>
     </Provider>

@@ -31,7 +31,7 @@ export const SearchBar = () => {
         type="search"
         name="search"
         id="search"
-        className="border-slate-900 border"
+        className="border-black border-[1px]"
         role="search"
         onChange={updateInput}
         term={term}
