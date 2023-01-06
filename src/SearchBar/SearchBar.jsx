@@ -31,10 +31,11 @@ export const SearchBar = () => {
         type="search"
         name="search"
         id="search"
-        className="border-black border-[1px]"
+        className="border-black border-[1px] bg-slate-200 focus:outline-black focus:outline focus:outline-[1.5px] pl-1"
         role="search"
         onChange={updateInput}
         term={term}
+        placeholder="Search..."
       />
       <p>{term}</p>
     </div>
