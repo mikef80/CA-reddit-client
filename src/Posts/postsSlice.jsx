@@ -4,10 +4,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (term) => {
   try {
 
     if (term) {
-      console.log(term);
-      // return await fetch(`https://www.reddit.com/search.json?q=surfing`)
       const url = `https://www.reddit.com/search.json?q=${term}`;
-      console.log(url);
       return await fetch(url)
         .then((response) => response.json())
         .then((raw) => raw.data.children);
@@ -54,7 +51,6 @@ export const postsSlice = createSlice({
       }
     });
     builder.addCase(fetchPosts.rejected, (state, action) => {
-      // state.posts.push(action.payload);
       state.isLoading = false;
       console.log("posts rejected");
     });

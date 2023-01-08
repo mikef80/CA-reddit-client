@@ -26,8 +26,6 @@ const Posts = () => {
         posts.posts.map((post) => {
           return post.map((item) => {
             const { id } = item.data;
-            // console.log(item.data);
-
             return <Post key={id} data={item.data} />;
           });
         })
