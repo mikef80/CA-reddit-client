@@ -72,7 +72,6 @@ export const SearchBar = () => {
         term={term}
         placeholder="Search..."
       />
-      {/* <p>{term}</p> */}
     </div>
   );
 };
