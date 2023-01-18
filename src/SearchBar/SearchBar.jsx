@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { updateTerm, cleanTerm } from "./searchBarSlice";
-import { fetchPosts, cleanPosts } from "../Posts/postsSlice";
+import { updateTerm, /* cleanTerm */ } from "./searchBarSlice";
+import { fetchPosts, /* cleanPosts */ } from "../Posts/postsSlice";
 
 // export const SearchBar = () => {
 //   const term = useSelector((state) => state.searchBar.term);
@@ -58,7 +58,7 @@ export const SearchBar = () => {
     },1000);
 
     return () => clearTimeout(search);
-  },[term])
+  },[term, dispatch])
 
   return (
     <div>
@@ -72,7 +72,7 @@ export const SearchBar = () => {
         term={term}
         placeholder="Search..."
       />
-      <p>{term}</p>
+      {/* <p>{term}</p> */}
     </div>
   );
 };

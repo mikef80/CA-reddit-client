@@ -2,13 +2,16 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (term) => {
   try {
-    console.log(term);
-    // return await fetch(`https://www.reddit.com/search.json?q=surfing`)
-    const url = `https://www.reddit.com/search.json?q=${term}`;
-    console.log(url);
-    return await fetch(url)
-      .then((response) => response.json())
-      .then((raw) => raw.data.children);
+
+    if (term) {
+      console.log(term);
+      // return await fetch(`https://www.reddit.com/search.json?q=surfing`)
+      const url = `https://www.reddit.com/search.json?q=${term}`;
+      console.log(url);
+      return await fetch(url)
+        .then((response) => response.json())
+        .then((raw) => raw.data.children);
+    }
   } catch (error) {
     console.log(error);
   }
